@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope</title>
+</head>
+<body>
+  <a href="./index.html">Go back</a>
+  <p>Abre la consola</p>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script>
+    // Global scope
+    var message = 'Hola Platzi!'
+    var $ = function(message) {
+      console.log(`Say: ${message}`);
+    }
+
+    // Funciont scope
+    function printNumbers() {
+      var i;
+      for(i = 0; i < 10; i++) {
+        function eventuallyPrintNumber(n) {
+          setTimeout(() => {
+            console.log(n);
+          }, 100)
+        }
+
+        eventuallyPrintNumber(i)
+      }
+    }
+
+    printNumbers()
+
+    // Block scope
+    function printNumbers2() {
+      for(let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          console.log(n);
+        }, 100)
+      }
+    }
+
+    printNumbers()
+    
+    // Module scope
+    // <script type="module" src="./assets/index.js"></script>
+    <!-- Limita las variables y funciones al archivo al que pertenecen. -->
+    <!-- No podemos accederlas ni siquiera en el navegador. -->
+
+  </script>
+</body>
+</html>
