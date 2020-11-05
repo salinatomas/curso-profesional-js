@@ -1,7 +1,7 @@
-import MediaPlayer from './MediaPlayer'
-import AutoPlay from './plugins/AutoPlay'
-import AutoPause from './plugins/AutoPause'
-import AdsPlugin from './plugins/ads'
+import MediaPlayer from '@salinatomass/platzimediaplayer'
+import AutoPlay from '@salinatomass/platzimediaplayer/lib/plugins/AutoPlay'
+import AutoPause from '@salinatomass/platzimediaplayer/lib/plugins/AutoPause'
+import AdsPlugin from '@salinatomass/platzimediaplayer/lib/plugins/ads'
 
 const video: HTMLMediaElement = document.querySelector('video')
 const playButton: HTMLElement = document.querySelector('button#play-pause')
